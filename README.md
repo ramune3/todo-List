@@ -3,6 +3,8 @@
 
 <img width="641" height="436" alt="image" src="https://github.com/user-attachments/assets/4d842acd-9b55-4cda-9b58-fa72472ab8e9" />
 
+## どうやってアクセスするか
+ここからアクセスできます。→ https://ramune3.github.io/todo-List/todo-list-app.html
 
 ## 操作方法
 
@@ -17,9 +19,6 @@ https://github.com/user-attachments/assets/b035ab94-4069-47ab-adfa-e3c721bca274
 画面下部のプラスボタンを押せば、タスク欄とチェックボックスがいっぺんに追加されます
 
 https://github.com/user-attachments/assets/71a8d42c-fcdd-4dbf-a095-fe996ff14667
-
-## アクセス先
-ここからアクセスできます。→ https://ramune3.github.io/todo-List/todo-list-app.html
 
 ## 備考
 プログラミング自体はしておらず、すべてClaude Sonet 4.5によるコード生成です。
