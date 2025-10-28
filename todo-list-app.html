@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日のやることリスト</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .task-list {
+            margin-bottom: 20px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .task-item:hover {
+            background: #e9ecef;
+        }
+
+        .task-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            margin-right: 15px;
+            accent-color: #667eea;
+        }
+
+        .task-item input[type="text"] {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            padding: 5px;
+            outline: none;
+            color: #333;
+        }
+
+        .task-item input[type="text"]:focus {
+            background: white;
+            border-radius: 4px;
+            padding: 5px 10px;
+        }
+
+        .task-item.completed input[type="text"] {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .add-task-btn {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+
+        .add-task-btn:hover {
+            background: #5568d3;
+        }
+
+        .add-task-btn:active {
+            transform: scale(0.98);
+        }
+
+        .plus-icon {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 今日のやることリスト</h1>
+        <div class="task-list" id="taskList">
+            <div class="task-item">
+                <input type="checkbox" onchange="toggleTask(this)">
+                <input type="text" placeholder="タスクを入力してください...">
+            </div>
+            <div class="task-item">
+                <input type="checkbox" onchange="toggleTask(this)">
+                <input type="text" placeholder="タスクを入力してください...">
+            </div>
+            <div class="task-item">
+                <input type="checkbox" onchange="toggleTask(this)">
+                <input type="text" placeholder="タスクを入力してください...">
+            </div>
+        </div>
+        <button class="add-task-btn" onclick="addTask()">
+            <span class="plus-icon">+</span>
+            <span>タスクを追加</span>
+        </button>
+    </div>
+
+    <script>
+        function addTask() {
+            const taskList = document.getElementById('taskList');
+            const taskItem = document.createElement('div');
+            taskItem.className = 'task-item';
+            
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.onchange = function() {
+                toggleTask(this);
+            };
+            
+            const textInput = document.createElement('input');
+            textInput.type = 'text';
+            textInput.placeholder = 'タスクを入力してください...';
+            
+            taskItem.appendChild(checkbox);
+            taskItem.appendChild(textInput);
+            taskList.appendChild(taskItem);
+            
+            textInput.focus();
+        }
+
+        function toggleTask(checkbox) {
+            const taskItem = checkbox.parentElement;
+            if (checkbox.checked) {
+                taskItem.classList.add('completed');
+            } else {
+                taskItem.classList.remove('completed');
+            }
+        }
+    </script>
+</body>
+</html>
