@@ -1,7 +1,7 @@
 # todo-List
 #19日目　Todoリストのまとめアプリ　Xやスタプラにシェアすることを想定しました
 
-<img width="807" height="638" alt="image" src="https://github.com/user-attachments/assets/1f1d69ae-867f-414c-a946-2fbec4894308" />
+<img width="641" height="436" alt="image" src="https://github.com/user-attachments/assets/4d842acd-9b55-4cda-9b58-fa72472ab8e9" />
 
 
 ## 操作方法
